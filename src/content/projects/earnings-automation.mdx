@@ -1,0 +1,42 @@
+---
+title: 财报分析自动化
+tagline: 一套"零幻觉"的财报分析流水线。自动拉取业绩会全文与新闻稿，逐章引用原文写出机构级研报，每个数字都能回溯到出处。
+domain: work
+category: system
+role: 设计并实现数据流水线 + 报告方法论（数据获取脚本 / 引用规范 / 图表生成 / Word 输出）
+status: 持续使用 · 已产出多家公司多季度报告
+problem: 用大模型写财报分析最大的风险是"一本正经地编数字"——口径错、数据是估的、引用对不上原文。在投研场景里，一个编造的数字就足以让整份报告失去可信度。
+aiCapability: 把流程拆成"脚本只负责拉全文数据、Agent 只负责逐章引用原文写作"两层，从架构上消除幻觉空间——每个财务数字都来自新闻稿原文，每句管理层观点都标注业绩会原话出处，做到可回溯、可核对。
+metrics:
+  - value: "零幻觉"
+    label: 数字逐句回溯新闻稿与原文
+  - value: "25K+ 字"
+    label: 单场业绩会 transcript 全文
+  - value: "多家多季度"
+    label: CRWV / JD / EDU / 小米 等
+  - value: "自动图表"
+    label: 营收拆分 / Beat-Miss / 利润率
+reports:
+  - label: 拼多多 PDD · Q1 2026
+    cover: ../../assets/projects/earnings/pdd-cover.jpg
+    read: /reports/pdd-q1-2026.html
+    download: /reports/PDD-Q1-2026-earnings-report.docx
+  - label: 阿里巴巴 BABA · Q4 2026
+    cover: ../../assets/projects/earnings/baba-cover.jpg
+    read: /reports/baba-q4-2026.html
+    download: /reports/BABA-Q4-2026-earnings-report.docx
+featured: false
+order: 7
+---
+
+## 为什么做这个
+
+财报分析是大模型很容易"翻车"的场景：它会把口径搞混（集团总营收 vs 核心业务）、用估算值冒充实际披露、把引用对错段落。而在投研里，**可信度是一切**——一个编造的数字就毁掉整份报告。我想要一套从架构上就不给幻觉留空间的流水线，而不是写完之后再去人工抓错。
+
+## 方法论：为什么"零幻觉"
+
+关键洞察是：**幻觉往往发生在"数据获取"和"内容生成"被揉在一起的时候**。一旦让模型一边猜数据一边写文章，它就会在缺数据时自己编。
+
+我把这两步彻底拆开——拉数据的环节（脚本）没有任何生成能力，只负责把业绩会 transcript 全文与官方新闻稿原样取回；写作的环节只能引用已经拿到的原文，每个数字回溯到新闻稿的某一行、每句观点回溯到 transcript 的某一段。报告里的营收拆分、Beat/Miss、利润率图表，数据同样来自披露原文。
+
+> 上方两张是真实产出的报告（拼多多 Q1、阿里巴巴 Q4），点任意一张即可在站内直接翻看完整全文（含 Executive Summary、核心 KPI 速览、分业务拆解等）。

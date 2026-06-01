@@ -1,0 +1,39 @@
+---
+title: 周末吃啥
+tagline: 微信里的约饭搭子。问你几个问题，就能在三千多家北京餐厅里，给一桌人挑出能让所有人都满意的那两三家。
+domain: life
+category: agent
+role: 独立设计、开发与部署（对话流程 / 推荐逻辑 / 数据治理 / 上线）
+status: 已上线 · 独立 VPS account 运行
+problem: 群里约饭最难的不是吃什么，而是"众口难调"——人数、口味、预算、地点、饭后干嘛，每个变量都在变。在群里来回问一圈，半小时还定不下来。
+aiCapability: 用有限状态机把"约饭决策"拆成 5 个关键提问，结合朋友档案与历史饭局做个性化推荐，并用高德 POI 对模糊地点做自动澄清——把一次发散的群聊收敛成 2-3 个有理由的确定选项。
+metrics:
+  - value: "3229 家"
+    label: 北京本地餐厅数据库
+  - value: "5 轮"
+    label: 结构化提问锁定需求
+  - value: "档案 + 历史"
+    label: 结合朋友口味与过往饭局
+  - value: "已上线"
+    label: 独立 account · systemd 常驻
+heroCards:
+  - emoji: "🍜"
+    title: 终结「周末吃啥」
+    subtitle: 几个问题，帮一桌人定下今天去哪吃
+  - emoji: "📍"
+    title: 3000+ 餐厅 × 高德 POI
+    subtitle: 结合位置、口味、人数，给真能落地的选择
+gallery:
+  - src: ../../assets/projects/zhoumo/chat1.jpg
+    caption: 发起约饭，逐轮收集需求
+  - src: ../../assets/projects/zhoumo/chat2.jpg
+    caption: 给 2-3 家候选 + 理由
+  - src: ../../assets/projects/zhoumo/chat3.jpg
+    caption: 结合地点预算精准推荐
+featured: true
+order: 2
+---
+
+## 为什么做这个
+
+每到周末，群里"吃啥"能聊半小时也定不下来。问题不在选项太少，而在约饭是个**多人、多约束的决策**：人数、忌口、人均预算、离地铁远近、饭后想不想再坐坐——这些变量靠群聊根本收敛不了。我想做一个会主动提问、能记住每个人口味、还懂北京地理的约饭搭子，直接住在大家约饭的那个微信里。

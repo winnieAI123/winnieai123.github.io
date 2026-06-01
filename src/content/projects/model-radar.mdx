@@ -1,0 +1,34 @@
+---
+title: Model Radar
+tagline: 大模型动态的实时看板。把分散在各个榜单、发布渠道、社区里的信号聚到一屏，每周自动生成一份"谁涨了谁跌了"的变化周报。
+domain: work
+category: system
+role: 独立开发与部署（数据采集 / 聚合分析 / 前端看板 / 定时任务 / 云端运维）
+status: 已上线 · modelradar.app 实时运行
+problem: 大模型圈一周能发生的事太多——新模型、新榜单排名、新论文、KOL 推文，散落在十几个来源。想知道"这周模型格局有什么变化"，得自己手动刷一圈，既慢又容易漏。
+aiCapability: 聚合 5+ 个评测/排名来源，用滑动 7 天窗口做跨平台对比，自动识别"排名跳变"的模型并生成结构化变化周报——把需要人工巡检十几个站点的工作，压缩成一屏看板和一份自动周报。
+metrics:
+  - value: "5+ 榜单"
+    label: LMArena / OpenRouter / SuperCLUE 等
+  - value: "每周"
+    label: 自动生成变化 diff 周报
+  - value: "实时看板"
+    label: modelradar.app 在线运行
+  - value: "多维度"
+    label: 文本 / 代码 / 文生图 / 视频
+links:
+  live: https://modelradar.app/
+cover: ../../assets/projects/model-radar/cover.png
+featured: true
+order: 4
+---
+
+## 为什么做这个
+
+跟踪大模型进展是件很"碎"的事：LMArena 看综合排名，OpenRouter 看真实调用量，SuperCLUE 看中文能力，还要刷 GitHub release、论文、X。每个来源都只是一块拼图，想拼出"这周到底发生了什么变化"，得来回切十几个页面。我想把这些信号聚到一屏，并且让它能自己告诉我**变化**在哪里，而不只是展示一堆静态排名。
+
+## 关键难点
+
+**多源数据的归一化与去重。** 不同榜单对同一个模型的命名、变体（standard / free / thinking）拆分方式都不一样，要让它们能放在一起比较，得做大量规则对齐——这是"能不能横向对比"的前提。
+
+**"变化"比"现状"更难做。** 展示当前排名容易，但要可靠算出"这周谁涨了"，需要稳定的历史快照和滑动窗口对比，还要能容忍上游榜单偶尔的数据缺失或改版。

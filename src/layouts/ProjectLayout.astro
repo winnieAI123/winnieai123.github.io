@@ -1,0 +1,81 @@
+---
+import AppLayout from "./AppLayout.astro";
+import ProjectDetail from "../components/ProjectDetail.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  prev?: { slug: string; title: string } | null;
+  next?: { slug: string; title: string } | null;
+}
+
+const { project, prev, next } = Astro.props;
+const d = project.data;
+---
+
+<AppLayout title={`${d.title} · Winnie 作品集`} description={d.tagline}>
+  <header class="bar">
+    <a class="bar__brand" href="/">Winnie<span class="bar__dot">.</span></a>
+    <a class="bar__back" href="/">← 返回作品集看板</a>
+  </header>
+
+  <main class="wrap">
+    <h1 class="sr-only">{d.title} · Winnie 作品集</h1>
+    <ProjectDetail project={project}>
+      <slot />
+    </ProjectDetail>
+
+    <nav class="pnav">
+      {prev ? <a href={`/projects/${prev.slug}`}>← {prev.title}</a> : <span />}
+      {next && <a href={`/projects/${next.slug}`}>{next.title} →</a>}
+    </nav>
+  </main>
+</AppLayout>
+
+<style>
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding-inline: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+  }
+  .bar__brand {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .bar__dot {
+    color: var(--color-accent);
+  }
+  .bar__back {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+  .bar__back:hover {
+    color: var(--color-accent);
+  }
+  .wrap {
+    padding: var(--space-8) var(--space-4) var(--space-12);
+  }
+  .pnav {
+    max-width: 860px;
+    margin: var(--space-10) auto 0;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    font-weight: 600;
+  }
+  .pnav a:hover {
+    color: var(--color-accent);
+  }
+</style>

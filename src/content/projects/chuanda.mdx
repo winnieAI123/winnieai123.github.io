@@ -1,0 +1,39 @@
+---
+title: 穿搭大喇叭
+tagline: 住在微信里的 AI 造型师，多轮对话记住你的色号与审美，一条消息同时给出搭配文案、配色卡和真人示意图。
+domain: life
+category: agent
+role: 独立设计、开发与部署（产品定义 / Agent 架构 / 上线运维全链路）
+status: 已上线 · VPS systemd 常驻运行
+problem: 普通人想要"有审美主见"的穿搭建议，但请造型师太贵、看博主又难落到自己身上；通用聊天机器人记不住"我上次说的那件燕麦色大衣"，每次都要从头解释。
+aiCapability: 把多轮对话记忆做成可被检索的结构化偏好（精确到 hex 色号），并将文本建议与图像生成串成一条流水线——一次回复直接产出可执行的搭配方案 + 配色卡 + 真人上身示意图。
+metrics:
+  - value: "3 态输出"
+    label: 一条消息同时生成文案 + 配色卡 + 真人示意图
+  - value: "跨轮记忆"
+    label: 精确记住 hex 色号与风格偏好
+  - value: "7×24"
+    label: systemd 自托管常驻，无需手动干预
+  - value: "微信原生"
+    label: 作为独立联系人，0 下载、0 学习成本
+heroCards:
+  - emoji: "🧥"
+    title: 随身 AI 造型师
+    subtitle: 拍张照、说句话，秒回一整套可执行的搭配方案
+  - emoji: "🎨"
+    title: 记得住你的色号
+    subtitle: 多轮对话记忆 hex 色号与审美，越聊越懂你
+gallery:
+  - src: ../../assets/projects/chuanda/chat1.jpg
+    caption: 出搭配 + 配色卡 + 真人示意图
+  - src: ../../assets/projects/chuanda/chat2.jpg
+    caption: 晒穿搭 → 实时点评建议
+  - src: ../../assets/projects/chuanda/chat3.jpg
+    caption: 多轮记住你的偏好
+featured: true
+order: 1
+---
+
+## 为什么做这个
+
+身边朋友常问"今天去咖啡店探店穿什么""这件大衣配什么颜色的鞋"。请造型师太贵，刷穿搭博主又很难落到自己身上。我想验证：能不能把一个"有审美、有主见、还记得你"的造型师，直接塞进微信——加个好友就能用，零下载、零学习成本。

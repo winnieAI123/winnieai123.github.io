@@ -1,0 +1,34 @@
+---
+title: 众筹新品追踪
+tagline: 一屏盯住全球众筹新品。聚合 Kickstarter、Indiegogo、Makuake 三大平台，自动抓取硬件新品并用大模型起中文名、提炼产品亮点，把英文众筹页变成可快速扫读的中文情报卡。
+domain: work
+category: system
+role: 独立全栈开发与部署（三平台采集 / 反爬 / LLM 富化 / FastAPI 看板 / Railway 部署）
+status: 已上线 · Railway 定时自动运行
+problem: 想抓住消费硬件的早期趋势，最好的信号源是众筹——但 Kickstarter、Indiegogo、Makuake 各自独立、且大多是英文长页面，想横向看"现在哪些品类在爆、谁募资最猛"，得分别去三个站翻、还得逐个读懂。
+aiCapability: 不只是聚合数据，而是用 DeepSeek 给每个抓到的项目自动生成中文短名、并从冗长的项目故事里提炼出 3 条产品亮点——把三个平台的英文众筹页，富化成统一、可比、能几秒扫完的中文情报卡。
+metrics:
+  - value: "3 平台"
+    label: Kickstarter / Indiegogo / Makuake
+  - value: "LLM 富化"
+    label: 自动中文命名 + 产品亮点提取
+  - value: "绕反爬"
+    label: curl_cffi 浏览器指纹模拟
+  - value: "定时自动"
+    label: APScheduler 每 48h 抓近 15 天新品
+links:
+  live: https://crowdfunding-dashboard-production.up.railway.app/
+cover: ../../assets/projects/crowdfunding/cover.png
+featured: false
+order: 5
+---
+
+## 为什么做这个
+
+众筹是消费硬件最早的需求信号——一个还没量产的产品能在 Kickstarter 上募到几百万，本身就说明了市场。但这些信号分散在 Kickstarter、Indiegogo、Makuake 三个独立平台、且大多是英文长页面：想横向判断"现在什么品类在爆、哪个产品募资最猛"，只能一个站一个站翻、再逐个读懂。我想把三个平台聚到一屏，并且让它**替我读懂、读成中文**。
+
+## 关键难点
+
+**反爬是第一道坎。** 三个平台都有反爬，普通 `requests` 直接被挡。我用 `curl_cffi` 模拟真实 Chrome 的 TLS 指纹绕过，才能稳定拿到数据——这是整个项目能不能跑起来的前提。
+
+**让 LLM 富化可控且省钱。** 中文命名和亮点提取若每次全量重跑，又慢又费 token。我把富化做成增量回填（只处理缺中文名或缺亮点的项目），并在模型失败时退化到关键词规则兜底，保证看板始终有可读的中文内容。

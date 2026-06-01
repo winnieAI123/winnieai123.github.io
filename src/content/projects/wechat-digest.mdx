@@ -1,0 +1,34 @@
+---
+title: 公众号投研日报
+tagline: 每天替我读完六个投研公众号。无人值守地抓取、摘要、推送，每晚把一份结构化日报直接送到飞书群。
+domain: work
+category: system
+role: 独立搭建与部署（爬取 / 摘要管线 / 飞书集成 / 定时调度 / VPS 运维）
+status: 已上线 · VPS systemd 每日自动运行
+problem: 关注的投研公众号有六七个，每天更新一堆长文，靠人一篇篇读完根本来不及；但漏掉又怕错过关键观点。这是典型的"信息过载 + 阅读成本太高"。
+aiCapability: 把"多公众号抓取 → 大模型结构化摘要 → 定时分发"串成一条无人值守的流水线，用统一的字段 schema 提炼每篇文章的核心观点，每晚定时生成日报并推送，让六个公众号的内容在几分钟内读完。
+metrics:
+  - value: "6 公众号"
+    label: 投研内容源持续监测
+  - value: "每天 23:30"
+    label: 定时自动生成并推送
+  - value: "结构化摘要"
+    label: 统一字段 schema 提炼观点
+  - value: "0 人工"
+    label: 无人值守流水线
+gallery:
+  - src: ../../assets/projects/wechat-digest/cover.jpg
+    caption: 每晚 23:30 飞书机器人自动推送日报
+  - src: ../../assets/projects/wechat-digest/digest1.jpg
+    caption: 每篇含来源/总结/摘要/投研含义
+  - src: ../../assets/projects/wechat-digest/digest2.jpg
+    caption: 统一字段 schema，格式一致可扫读
+  - src: ../../assets/projects/wechat-digest/digest3.jpg
+    caption: 自动附原文链接，可回溯
+featured: false
+order: 6
+---
+
+## 为什么做这个
+
+我关注的投研公众号有六七个，每天加起来更新近万字。全读完不现实，不读又怕漏掉关键判断。这件事的本质是：**内容有价值，但人工阅读的成本太高**。我想把"读完并提炼"这一步交给一条自动流水线，每晚定时把结果送到飞书。
