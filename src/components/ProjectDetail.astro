@@ -66,13 +66,17 @@ const heroGradients = [
   </header>
 
   {
-    d.video ? (
+    d.video && (
       <div class="pd__cover">
         <video controls preload="metadata" poster={d.video.poster}>
           <source src={d.video.src} type="video/mp4" />
         </video>
       </div>
-    ) : d.heroCards.length > 0 ? (
+    )
+  }
+
+  {
+    d.heroCards.length > 0 ? (
       <div class="pd__hero-cards">
         {d.heroCards.map((c, i) => (
           <div
@@ -112,7 +116,7 @@ const heroGradients = [
           </a>
         ))}
       </div>
-    ) : d.cover ? (
+    ) : d.cover && !d.video ? (
       <div class="pd__cover">
         <Image
           src={d.cover}
