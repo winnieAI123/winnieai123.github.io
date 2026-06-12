@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>AI 智能眼镜社媒用户反馈研究报告</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">AI 智能眼镜社媒用户反馈研究报告</h1>
+</header>
+<p><strong>研究窗口</strong>：截至 2026 年 6 月 12 日（数据覆盖近 12
+个月社媒讨论） <strong>数据来源</strong>：Reddit（648 条，23
+个高热帖全量评论）、YouTube（1,856 条，39
+个测评视频高赞评论）、X/Twitter（95 条），合计 2,599
+条去重后的真实用户评论 <strong>覆盖产品</strong>：Ray-Ban Meta（Gen
+1/Gen 2）、Meta Ray-Ban Display（含神经腕带）、Oakley Meta、Even
+Realities G1/G2、Rokid、小米 AI 眼镜等</p>
+<hr />
+<h2 id="一核心结论速览">一、核心结论速览</h2>
+<h4 id="品类已跨过科技玩具门槛但仍是奢侈品而非必需品">1.
+品类已跨过”科技玩具”门槛，但仍是”奢侈品而非必需品”</h4>
+<p>Ray-Ban Meta
+被用户公认为第一个”像真产品”的智能眼镜，这在三年前的品类讨论中是不存在的评价。</p>
+<blockquote>
+<p>“Best smart glasses I’ve tried that actually feel like a real
+product, not a tech demo. But at ~$379 they’re a luxury, not a
+necessity.”（Reddit，使用两周后的长测帖）</p>
+</blockquote>
+<blockquote>
+<p>“At first I thought these would be hella gimmicky, but once trying
+them, they’re amazing. It’s like having Alexa + headphones wrapped all
+in one.”（YouTube，418 赞）</p>
+</blockquote>
+<h4 id="真正留住用户的不是-ai是耳机替代-解放双手的相机">2.
+真正留住用户的不是 AI，是”耳机替代 + 解放双手的相机”</h4>
+<p>高频复购和日常佩戴的用户，叙事几乎都落在两件事上：开放式音频替代耳机、不掏手机完成抓拍。AI
+功能在留存叙事中是配角。</p>
+<blockquote>
+<p>“Personally, just for replacing earbuds alone, that’s just 100x
+better. Then, not having to take my phone out to film, it’s just a life
+changer, especially when having a kid.”（Reddit）</p>
+</blockquote>
+<blockquote>
+<p>“I live in a major city, I’m constantly running after the train and
+my AirPods have slipped off SO many times. It’s so nice to not have to
+carry extra items when you’re commuting.”（YouTube，100 赞）</p>
+</blockquote>
+<blockquote>
+<p>“I have been threatened 3 times this year by road ragers… without
+video evidence, the cops did nothing. I want these glasses to be my
+second pair of eyes.”（YouTube，384 赞，安防自证场景）</p>
+</blockquote>
+<h4
+id="带显示新品meta-ray-ban-display口碑两极神经腕带是争议双方唯一的共识">3.
+带显示新品（Meta Ray-Ban
+Display）口碑两极，神经腕带是争议双方唯一的共识</h4>
+<p>深度用户称显示和腕带”革命性”，批评者直接判”D.O.A.”（出厂即死），但连批评者都承认腕带是未来。</p>
+<blockquote>
+<p>“The private display and the Neural Band gesture control feel
+revolutionary. However, it’s held back by some bizarre software
+limitations… a product strictly for hardcore early adopters right
+now.”（Reddit，544 赞长测帖）</p>
+</blockquote>
+<blockquote>
+<p>“This product is D.O.A. and it’s not even close… they look silly. I
+could barely stand looking at myself in the mirror wearing
+them.”（Reddit，AR 行业从业者试用帖）</p>
+</blockquote>
+<blockquote>
+<p>“The neural wristband might be the sole reason I blow $800 on it. I
+think it’s the future of wearables.”（Reddit，26 赞）</p>
+</blockquote>
+<h4 id="减少掏手机成为意外的正面叙事与又一块屏幕的预期相反">4.
+“减少掏手机”成为意外的正面叙事，与”又一块屏幕”的预期相反</h4>
+<blockquote>
+<p>“My personal pattern used to be: get a message, grab phone, and 20
+minutes later I’m mindlessly scrolling. Surprisingly, these glasses
+reduced my screen time.”（Reddit，Display 一个月长测）</p>
+</blockquote>
+<h4
+id="续航是头号硬件抱怨但体验高度分裂even-g2-的两天续航被反复点名表扬">5.
+续航是头号硬件抱怨，但体验高度分裂；Even G2
+的两天续航被反复点名表扬</h4>
+<p>重度相机/音频用户实际续航 3-4
+小时，轻度用户可撑全天，两派在评论区直接互相否定。</p>
+<blockquote>
+<p>“Within about 2 hours I went from a full charge to 15 percent. This
+isn’t heavy use, I’m just listening to music and responding to a few
+messages.”（YouTube，后厨厨师用户）</p>
+</blockquote>
+<blockquote>
+<p>“Every review I’ve seen talks about bad battery life. That is not
+what I’m seeing… 6:30am to 10pm, I still have 20% left at 10pm. Don’t
+listen to any battery reviews.”（Reddit）</p>
+</blockquote>
+<blockquote>
+<p>“The most impressive gains for me is the battery life. It really last
+two days and more.”（Reddit，Even G2 用户）</p>
+</blockquote>
+<h4
+id="隐私已从评论区担忧升级为线下冲突职场禁令呼吁和州立法是品类级社会阻力">6.
+隐私已从”评论区担忧”升级为线下冲突、职场禁令呼吁和州立法，是品类级社会阻力</h4>
+<p>数据中互动量最高的几条内容全部与隐私有关：地铁砸眼镜事件、外包标注员看到用户私密录像的丑闻（Reddit
+原帖 22,916 赞）、宾州”录制可视指示”法案。</p>
+<blockquote>
+<p>“It’s funny how we are willingly creating our own surveillance
+state.”（YouTube，1,853 赞）</p>
+</blockquote>
+<blockquote>
+<p>“The biggest drawback of this product is not privacy’s nightmare for
+the buyers only but also for the people that just happen to be in the
+same spot as meta glasses users.”（YouTube，783 赞）</p>
+</blockquote>
+<blockquote>
+<p>“I urge folks to write to HR, requesting that smart glasses are
+banned in the workplace.”（Reddit，温哥华板块，342 赞）</p>
+</blockquote>
+<blockquote>
+<p>“Really wish these had a ‘no spy camera’ option. I’d love the cool
+tech features without making people in public
+uncomfortable.”（YouTube，45 赞）</p>
+</blockquote>
+<h4 id="meta-品牌不信任是独立于产品力的结构性折价">7. “Meta
+品牌不信任”是独立于产品力的结构性折价</h4>
+<p>大量用户明确表示产品本身已经合格，阻止他们购买的是 Meta
+这个主体，以及对”未来塞广告”的恐惧。</p>
+<blockquote>
+<p>“Only thing holding these things back is the fact they are tied to
+Meta. They are so close.”（YouTube，20,200 赞）</p>
+</blockquote>
+<blockquote>
+<p>“Now I just need these to be made by anyone but
+Meta.”（YouTube，1,430 赞）</p>
+</blockquote>
+<blockquote>
+<p>“In a few years, we will have ads and sponsored posts right in front
+of our eyes.”（YouTube，23,895 赞）</p>
+</blockquote>
+<blockquote>
+<p>“Once you get hooked, they’ll drop in ads, and you’ll have to pay a
+subscription to get rid of them.”（YouTube，1,181 赞）</p>
+</blockquote>
+<h4
+id="无障碍听障视障是品类最强的确定性价值也是情感浓度最高的反馈来源">8.
+无障碍（听障/视障）是品类最强的确定性价值，也是情感浓度最高的反馈来源</h4>
+<blockquote>
+<p>“As a member of the deaf community I would’ve never thought there
+would be a time where I can have in real life captions for
+conversations. Spent 28 years reading lips and hitting folks with the
+‘yeah that’s crazy’.”（YouTube，7,994 赞）</p>
+</blockquote>
+<blockquote>
+<p>“A few years back I paid between three and £4000 for a pair of
+glasses to assist me as a blind person. These cost £300… Opens up a
+whole New World for us blindies.”（YouTube，121 赞）</p>
+</blockquote>
+<blockquote>
+<p>韩语用户算了一笔账：人工耳蜗手术约 2,000
+万韩元，外加每年数十万韩元的调机和维护，“相比之下，对话实时字幕的智能眼镜几乎等于白送，对重度听障人士是新的机会。”（YouTube，721
+赞，原文为韩语）</p>
+</blockquote>
+<hr />
+<h2 id="二用户画像与思维模式对比">二、用户画像与思维模式对比</h2>
+<h3 id="用户是谁who">2.1 用户是谁（Who）</h3>
+<p><strong>A. 科技尝鲜极客（Display 系核心买家）</strong> 愿意为 $800
+的第一代产品忍受购买流程、外观和软件缺陷，自我定位是”压力测试者”。</p>
+<blockquote>
+<p>“The lifestyle of an early adopter is not for everyone. We are more
+willing to put up with imperfections to pressure test the tech and
+ultimately through feedback push the technologies
+forward.”（Reddit）</p>
+</blockquote>
+<p><strong>B. 实用替代派（Ray-Ban Meta 主力日活用户）</strong>
+通勤族、带娃父母、骑行/滑雪爱好者、需要腾出双手的职业（后厨、维修）。他们用”替代了什么”来定义价值。</p>
+<blockquote>
+<p>“Honestly as a mum of two toddlers these sound perfect for capturing
+special moments on holiday.”（YouTube，1,421 赞）</p>
+</blockquote>
+<blockquote>
+<p>“Used for road cycling, group rides, they’re game changers! I always
+carry the case, no battery life issues this way.”（Reddit）</p>
+</blockquote>
+<blockquote>
+<p>“On weekends I usually go karting, rock climbing, or a bit of
+spirited driving in the canyons - none of which is an activity you can
+just pull out your phone while in the moment.”（YouTube，165 赞）</p>
+</blockquote>
+<p><strong>C. 无障碍刚需用户（听障/视障）</strong>
+把产品当”生活基础设施”而非数码产品，对精度的容忍度低、付费意愿高。</p>
+<blockquote>
+<p>“As someone with significant hearing loss, I purchased these glasses
+not just as a gadget, but as a vital tool to help me navigate daily
+conversations… we need more reliable transcription
+options.”（YouTube，Even G2 用户）</p>
+</blockquote>
+<p><strong>D. 内容创作者（被卡在门外的潜在大客群）</strong> POV
+拍摄需求明确，但被竖屏、3
+分钟限制和音频质量问题挡住，退货叙事集中在这个群体。</p>
+<blockquote>
+<p>“I wish Meta wasn’t so stubborn about the camera being vertical only.
+If you could record landscape so many YouTubers would buy these in a
+heartbeat.”（YouTube，3,419 赞）</p>
+</blockquote>
+<blockquote>
+<p>“I purchased these glasses with the intent to make content for my
+instagram and youtube… extremely bad audio quality issues (popping and
+cracking), making the videos basically unusable.”（Reddit，退款帖）</p>
+</blockquote>
+<p><strong>E. 商务/学习效率用户（Even Realities 系核心买家）</strong>
+开会、演讲、上课场景，要的是”安静的效率工具”：提词器、实时转写、翻译字幕。明确反感摄像头。</p>
+<blockquote>
+<p>“I use it during meetings or presentations and have my key points
+typed out on a note. The ring is convenient to quickly scroll through
+the notes.”（Reddit，Even G2 用户）</p>
+</blockquote>
+<blockquote>
+<p>“I love the fact that it has no camera!!! I would hate to talk to the
+person wearing the camera pointed at me. What Even did is the just
+right.”（YouTube，86 赞）</p>
+</blockquote>
+<p><strong>F.
+旁观者/反对者（非用户，但定义了佩戴者的社会环境）</strong></p>
+<blockquote>
+<p>“I think if I ever meet someone with these glasses, I’m going to whip
+out my phone and start obviously recording them from a few feet
+away.”（Reddit，48 赞）</p>
+</blockquote>
+<blockquote>
+<p>“The glasses with camera thing is creeping. It’s the modern
+equivalent of the guy wearing mirrors on his shoes.”（Reddit，508
+赞）</p>
+</blockquote>
+<h3 id="思维模式差异how-they-think">2.2 思维模式差异（How they
+think）</h3>
+<ul>
+<li><strong>Meta
+系用户买的是”少掏手机的生活方式”</strong>：评价坐标系是手机和耳机，“不用掏手机”出现频率极高，显示派用户甚至以”屏幕时间下降”为荣。</li>
+<li><strong>Even
+系用户买的是”别人看不出来的效率外挂”</strong>：评价坐标系是提词器、字幕机、会议记录工具；“discreet（不显眼）”是他们的高频词，无摄像头被视为卖点而非缺失。</li>
+<li><strong>反对者把摄像头视为佩戴者的人格标签</strong>：讨论中产品功能已不重要，“戴它说明你是什么人”成为主导框架。</li>
+</ul>
+<blockquote>
+<p>“The visual indicator should be a T-shirt that says, I’m a creepy
+douchebag.”（Reddit，33 赞，针对宾州法案的评论）</p>
+</blockquote>
+<h3 id="工作方式差异how-they-work">2.3 工作方式差异（How they
+work）</h3>
+<p>实用派用户会主动改造使用方式来绕过产品缺陷：关闭”Hey
+Meta”换长按省电、随身带充电盒、给办公场景物理关机。</p>
+<blockquote>
+<p>“Turn off the ‘Hey Meta’ and switch it to a long (single) press on
+the temple… Both will really help to improve your daytime battery
+length.”（Reddit）</p>
+</blockquote>
+<blockquote>
+<p>“Still worried about the privacy so while working in my office
+laptop, I prefer to turn this off using the kill switch.”（Reddit，3
+个月日常佩戴长测）</p>
+</blockquote>
+<hr />
+<h2 id="三真实使用场景矩阵">三、真实使用场景矩阵</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>场景</th>
+<th>主力产品</th>
+<th>用户证据</th>
+<th>满足度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通勤听歌/接打电话</td>
+<td>Ray-Ban Meta / Oakley Meta</td>
+<td>“almost completely abandoned my AirPods”（YouTube）</td>
+<td>高，最稳的留存场景</td>
+</tr>
+<tr>
+<td>带娃/旅行第一视角记录</td>
+<td>Ray-Ban Meta</td>
+<td>“not having to take my phone out to film, it’s just a life changer,
+especially when having a kid”（Reddit）</td>
+<td>高，但受 3 分钟限制</td>
+</tr>
+<tr>
+<td>运动（骑行/滑雪/跑步）</td>
+<td>Oakley Meta / Ray-Ban Meta</td>
+<td>“Used for road cycling, group rides, they’re game
+changers!”（Reddit）；Oakley Vanguard 与 Garmin/Strava
+集成获好评（X）</td>
+<td>高</td>
+</tr>
+<tr>
+<td>会议提词/转写</td>
+<td>Even Realities G1/G2</td>
+<td>“Wore it two days straight - 10 hour work days, multiple meetings
+with transcription and teleprompt”（Reddit）</td>
+<td>中高，噪音和口音下精度滑坡</td>
+</tr>
+<tr>
+<td>跨语言生活（追剧/上课/旅行）</td>
+<td>Even G2 / Rokid</td>
+<td>“Was watching a one punch series season 3 that’s only available in
+Japanese… as if subtitles were part of the series”（Reddit）；“class
+translation review：看原文低头、看译文抬头”（Reddit，留学生）</td>
+<td>中高</td>
+</tr>
+<tr>
+<td>步行导航</td>
+<td>Meta Ray-Ban Display</td>
+<td>“it has successfully guided me to several locations. Solid
+connection, accurate and feels natural”（X，4,847 赞）</td>
+<td>中，仅限步行，禁用驾驶</td>
+</tr>
+<tr>
+<td>听障实时字幕</td>
+<td>Even G2 / Display</td>
+<td>“in real life captions for conversations”（YouTube，7,994 赞）</td>
+<td>中高，精度仍是生命线</td>
+</tr>
+<tr>
+<td>视障环境识别</td>
+<td>Ray-Ban Meta</td>
+<td>“they are worth every penny for him”（Reddit，视障用户朋友）</td>
+<td>高</td>
+</tr>
+<tr>
+<td>消息免掏手机处理</td>
+<td>Meta Ray-Ban Display</td>
+<td>“Messages handled, calls made, directions shown - no excuse to reach
+for the phone”（Reddit）</td>
+<td>高（显示版独有）</td>
+</tr>
+<tr>
+<td>考试/面试作弊（灰色场景）</td>
+<td>各类带显示产品</td>
+<td>“cheating in school boutta get a whole lot easier”（YouTube，16,045
+赞）；r/cheatonlineproctor 出现 Even G1 作弊架构帖</td>
+<td>社会风险信号，非厂商可承认场景</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="四工具选择的底层决策逻辑">四、工具选择的底层决策逻辑</h2>
+<p>从用户语言中可以抽象出一条相当一致的决策链：</p>
+<p><strong>第一关：外观正常性测试。</strong>
+这是入场券，过不了直接出局。Ray-Ban Meta 赢在”没人看得出来”，Display
+输在”自己都看不下去”。</p>
+<blockquote>
+<p>“They look like normal Ray-Bans — nobody noticed.”（Reddit）</p>
+</blockquote>
+<blockquote>
+<p>“I could barely stand looking at myself in the mirror wearing
+them.”（Reddit，Display 试用）</p>
+</blockquote>
+<p><strong>第二关：是否存在一个高频单一场景。</strong>
+买家不是被功能清单说服的，而是被一个具体场景说服的（替代耳机、记录孩子、听障字幕）。全能预期者反而最容易退货。</p>
+<blockquote>
+<p>“If you use them, they are worth it. I can take a picture and send it
+to my friend via text. This is my favorite thing about
+them.”（Reddit）</p>
+</blockquote>
+<blockquote>
+<p>“They’re a fun toy, but IMO no. Not worth it at all. I got them as a
+gift and use them occasionally.”（Reddit，无场景用户）</p>
+</blockquote>
+<p><strong>第三关：价格锚定在眼镜/耳机，而不是手机。</strong> $300-400
+的定价之所以成立，是因为用户拿普通 Ray-Ban
+和处方镜片做参照；而处方镜片的隐藏加价会瞬间打破这个锚定。</p>
+<blockquote>
+<p>“It’s the fact they’re cheaper than my prescription
+glasses.”（YouTube，14,033 赞）</p>
+</blockquote>
+<blockquote>
+<p>“If you have a prescription, it costs $400 just for the lenses by
+themselves. And these lenses HAVE to come from Ray-Ban. So the real
+price is $700.”（YouTube，35 赞）</p>
+</blockquote>
+<p><strong>第四关：生态与信任折价。</strong> 封闭生态（连不上
+MacBook、没有 API）和对 Meta
+的不信任会在最后一步劝退本已心动的用户；“等下一代/等别家”是最常见的延迟购买理由。</p>
+<blockquote>
+<p>“Has anybody figured out a way to get their Meta Ray-Ban glasses to
+trigger webhooks or send messages? Right now, everything stays within
+the closed app, which isn’t particularly useful.”（X）</p>
+</blockquote>
+<blockquote>
+<p>“Can’t wait for literally any other company to release
+these.”（YouTube，8,669 赞）</p>
+</blockquote>
+<hr />
+<h2 id="五各产品的结构性-bug-与阻断点">五、各产品的结构性 Bug
+与阻断点</h2>
+<h3 id="ray-ban-metagen-1gen-2">Ray-Ban Meta（Gen 1/Gen 2）</h3>
+<ul>
+<li><strong>相机三连限制</strong>：仅竖屏、单段 3
+分钟、无变焦。“Shooting video only in portrait mode, especially
+considering that the cameras themselves are laid out horizontally, is an
+insane decision (and the reason I haven’t purchased
+them).”（YouTube，178 赞）</li>
+<li><strong>传输掉电</strong>：“transferring media drains battery fast.
+Battery realistically 3-4 hours with heavy camera use.”（Reddit）</li>
+<li><strong>品控离散</strong>：“I’m on my third pair in 2 years. The
+first pair stopped turning on. The second stopped pairing with my
+phone.”（Reddit）；开箱即音频爆裂导致退款（Reddit 退款帖）</li>
+<li><strong>售后黑洞</strong>（数据中最愤怒的内容簇）：“That window came
+and went with no credit… It’s been radio silence on their end. At this
+point, I’ve basically had non-working glasses for almost half a
+year.”（Reddit，Gen 2 保修帖）；“Touchpad doesn’t work. Battery drains
+in about 2-3 hours… This is happening a month after I got them repaired
+under warranty. I had to wait 6 months.”（Reddit）</li>
+<li><strong>软件失控感</strong>：赶不走的 Discover 标签页、承诺的
+Conversation Focus 跳票/区域锁。“It feels like one of the most practical
+accessibility/social features they’ve talked about, yet it’s either
+unavailable, region-locked, delayed, or barely mentioned
+now.”（Reddit）</li>
+<li><strong>生态封闭</strong>：不能作为 MacBook 音频设备稳定使用、无
+API/webhook 出口。</li>
+</ul>
+<h3 id="meta-ray-ban-display">Meta Ray-Ban Display</h3>
+<ul>
+<li><strong>外观劝退</strong>：“The thick shiny plastic frame looks
+worse than my old Snap Spectacles.”（Reddit）</li>
+<li><strong>购买流程反消费者</strong>：需预约线下
+demo，被多位用户列为”strictly for hardcore early
+adopters”的原因之一（Reddit，544 赞长测）</li>
+<li><strong>腕带需手动唤醒</strong>：“The only tiny annoyance is that
+you have to manually switch the band on, and it takes a few seconds to
+connect. I wish it would just ‘wake up’ automatically.”（Reddit）</li>
+<li><strong>导航仅限步行</strong>、收纳盒过大：“with the glasses inside
+it’s bulky—too big for the dedicated sunglasses pocket in my
+backpack.”（Reddit）</li>
+</ul>
+<h3 id="even-realities-g1g2">Even Realities G1/G2</h3>
+<ul>
+<li><strong>设备端控制太少</strong>：“if I want to swap which one’s on
+top (original vs. translation), I have to do it in the app — can’t
+change it directly on the glasses.”（Reddit，留学生课堂翻译帖）</li>
+<li><strong>强光可读性</strong>：“under bright sunlight, it’s hard to
+see the green text unless you add the dark lens.”（Reddit）</li>
+<li><strong>转写精度天花板</strong>：口音、噪音环境下滑坡，听障用户要求可选
+AI 引擎（见第六节）</li>
+<li><strong>配件体验粗糙</strong>：R1 戒指充电无状态提示，“I left it on
+the charger and it didn’t charge it over 4 hours.”（Reddit）</li>
+<li><strong>老用户被抛弃焦虑</strong>：“the real test of trust in the
+company for me is if the R1 ring and new app features will support the
+G1, or if they will just abandon the G1.”（YouTube）</li>
+</ul>
+<h3 id="品类级阻断点">品类级阻断点</h3>
+<ul>
+<li><strong>隐私社会摩擦持续升级</strong>：线下冲突（地铁事件）、职场禁令呼吁、州立法、外包标注丑闻（“It’s
+basically equivalent to a hidden camera.”，Reddit，991 赞）</li>
+<li><strong>视力健康疑虑无人回应</strong>：“No one ever talks about how
+much strain these things have on the eyes. The cool factor is never
+worth the eye damage.”（YouTube）</li>
+</ul>
+<hr />
+<h2
+id="六未被满足的用户需求与潜在机会">六、未被满足的用户需求与潜在机会</h2>
+<h4 id="无摄像头物理可拆摄像头-sku">1. 无摄像头/物理可拆摄像头 SKU</h4>
+<p>需求被用户原文直接说出，且 Even Realities
+已验证该定位的市场存在。</p>
+<blockquote>
+<p>“Really wish these had a ‘no spy camera’ option. I’d love the cool
+tech features without making people in public
+uncomfortable.”（YouTube）</p>
+</blockquote>
+<blockquote>
+<p>“I feel like for these to really become mainstream they have to ditch
+the camera.”（YouTube，170 赞）</p>
+</blockquote>
+<h4 id="无障碍精度付费分层">2. 无障碍精度付费分层</h4>
+<p>听障用户主动提出”付费换精度”，这是数据中罕见的用户自发定价行为。</p>
+<blockquote>
+<p>“I strongly believe the developers should provide a choice of
+different AI engines - even if it’s offered as a paid/premium tier - so
+that those of us who depend on this technology for accessibility can
+choose the level of precision.”（YouTube，Even G2 听障用户）</p>
+</blockquote>
+<h4 id="创作者模式横屏-长录制-外置存储">3. 创作者模式（横屏 + 长录制 +
+外置存储）</h4>
+<blockquote>
+<p>“They need to make them to where you can put memory card and film
+long videos not just 60 seconds.”（YouTube，532 赞）</p>
+</blockquote>
+<blockquote>
+<p>“If you could record landscape so many YouTubers would buy these in a
+heartbeat.”（YouTube，3,419 赞）</p>
+</blockquote>
+<h4 id="开放生态与开发者出口">4. 开放生态与开发者出口</h4>
+<p>封闭是被点名的购买阻断项，而社区已经在自建基础设施（GlassApps.io
+社区应用目录、用 Gemini Live + 开源项目给眼镜接 AI
+agent），需求外溢明显。</p>
+<blockquote>
+<p>“Everything stays within the closed app, which isn’t particularly
+useful.”（X）</p>
+</blockquote>
+<blockquote>
+<p>“Frequent updates and major ones - looking forward to opening up the
+marketplace for developers.”（Reddit，3 个月长测帖）</p>
+</blockquote>
+<h4 id="嘈杂环境听力增强conversation-focus-类功能">5.
+嘈杂环境听力增强（Conversation Focus 类功能）</h4>
+<blockquote>
+<p>“The one feature I genuinely want is Conversation Focus. Being able
+to lock onto the person you’re actually speaking to in a busy
+environment would make these glasses massively more useful in real life.
+Pubs, restaurants, work environments, public transport — that’s where
+the tech could actually shine.”（Reddit）</p>
+</blockquote>
+<h4 id="语音例程晨报routines">6. 语音例程/晨报（Routines）</h4>
+<blockquote>
+<p>“Routines similar to Alexa would have been great, like when I say
+‘hey meta good morning’ then it can walk me through my events - meetings
+and tasks for the day.”（Reddit）</p>
+</blockquote>
+<h4 id="神经腕带独立产品化">7. 神经腕带独立产品化</h4>
+<p>用户对腕带的兴奋度溢出眼镜品类本身，希望它成为
+VR/电脑/手机的通用输入设备。</p>
+<blockquote>
+<p>“I really, really hope they bring the sEMG wristband to their
+headsets.”（Reddit）</p>
+</blockquote>
+<blockquote>
+<p>“Believe that it can have uses in VR and get to a point where it
+replaces VR controllers.”（Reddit）</p>
+</blockquote>
+<h4 id="隐私可见性设计作为合规先机">8. 隐私可见性设计作为合规先机</h4>
+<p>录制指示灯被贴胶带绕过已是公开讨论，宾州法案只是开始；率先把”不可绕过的录制可见性”做成产品卖点的厂商，可能把监管摩擦转化为信任溢价。</p>
+<blockquote>
+<p>“We know people are bypassing the built-in recording indicators, so
+using that as an argument to regulate their use is a mute
+point.”（Reddit，职场禁令呼吁帖）</p>
+</blockquote>
+<hr />
+<h2 id="七数据来源说明与研究局限">七、数据来源说明与研究局限</h2>
+<ol type="1">
+<li><strong>样本构成</strong>：Reddit 648
+条（r/RaybanMeta、r/RayBanStories、r/MetaRayBanDisplay、r/EvenRealities、r/SmartGlasses、r/technology
+等 23 个高热帖全量评论）、YouTube 1,856 条（39 个测评视频高赞评论）、X
+95 条；采集时间 2026 年 6 月 12 日。</li>
+<li><strong>平台偏差</strong>：YouTube
+评论偏向爆款视频的情绪化表达（隐私恐惧、玩梗），Reddit
+偏向重度用户的长篇体验，X 样本量小（95
+条），仅作辅助验证，不单独支撑结论。</li>
+<li><strong>未覆盖中文社媒</strong>：本次未采集小红书/微博/B
+站，小米、Rokid
+等国产产品的反馈主要来自英文社区，对国内用户的代表性有限；如需国内视角建议补充久谦观点库或小红书数据。</li>
+<li><strong>未披露即不下结论</strong>：各产品的实际销量、退货率等运营数据在社媒数据中不可得，本报告所有判断仅基于用户表达，未引入厂商口径。</li>
+</ol>
+</body>
+</html>
