@@ -29,6 +29,10 @@ const projects = defineCollection({
         })
         .default({}),
       cover: image().optional(),
+      // 演示视频（public/ 下的路径）；详情页封面位优先渲染视频
+      video: z
+        .object({ src: z.string(), poster: z.string().optional() })
+        .optional(),
       // 标题下并排的品牌概念卡（用于无截图封面的项目，如生活类两个 Agent）
       heroCards: z
         .array(

@@ -71,7 +71,13 @@ const heroGradients = [
   </header>
 
   {
-    d.heroCards.length > 0 ? (
+    d.video ? (
+      <div class="pd__cover">
+        <video controls preload="metadata" poster={d.video.poster}>
+          <source src={d.video.src} type="video/mp4" />
+        </video>
+      </div>
+    ) : d.heroCards.length > 0 ? (
       <div class="pd__hero-cards">
         {d.heroCards.map((c, i) => (
           <div
@@ -224,6 +230,10 @@ const heroGradients = [
     max-height: 560px;
     height: auto;
     object-fit: contain;
+  }
+  .pd__cover video {
+    width: 100%;
+    display: block;
   }
   .pd__hero-gallery {
     margin-block: var(--space-6);
