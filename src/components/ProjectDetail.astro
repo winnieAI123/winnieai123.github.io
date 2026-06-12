@@ -39,11 +39,6 @@ const heroGradients = [
     <h2 class="pd__title">{d.title}</h2>
     <p class="pd__tagline">{d.tagline}</p>
 
-    <div class="pd__meta">
-      <span><strong>角色</strong>{d.role}</span>
-      <span><strong>状态</strong>{d.status}</span>
-    </div>
-
     {
       (linkEntries.length > 0 || d.links.read) && (
         <div class="pd__links">
@@ -189,23 +184,6 @@ const heroGradients = [
     font-size: var(--text-xl);
     color: var(--color-text-muted);
     line-height: var(--leading-snug);
-  }
-  .pd__meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    margin-top: var(--space-4);
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-  }
-  .pd__meta strong {
-    display: block;
-    color: var(--color-text-faint);
-    font-weight: 500;
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.2rem;
   }
   .pd__links {
     display: flex;
