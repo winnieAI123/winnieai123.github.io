@@ -8,9 +8,9 @@ const projects = defineCollection({
       title: z.string(),
       tagline: z.string(),
       // 顶层大区
-      domain: z.enum(["life", "work"]),
+      domain: z.enum(["life", "work", "explore"]),
       // 子区类型
-      category: z.enum(["agent", "system", "skill"]),
+      category: z.enum(["agent", "system", "skill", "crawler"]),
       role: z.string(),
       status: z.string(),
       problem: z.string(),

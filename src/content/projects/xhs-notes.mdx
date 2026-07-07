@@ -1,0 +1,36 @@
+---
+title: 小红书笔记抓取
+tagline: 逆向小红书签名算法，批量获取笔记内容与互动数据，把"刷不到尽头"的信息流变成可分析的结构化语料。
+domain: explore
+category: crawler
+role: 独立逆向与开发
+status: 已落地
+problem: 小红书是当下消费决策最重要的内容源，但笔记数据被锁在 App 内——接口有动态签名校验，翻页有限，常规爬虫根本进不去。
+aiCapability: 还原 x-s/x-t 签名生成逻辑（混淆 JS + WASM），在本地复现签名引擎，从而像正常客户端一样批量请求任意关键词、作者、话题下的笔记。
+techStack:
+  - JavaScript 逆向
+  - WASM 反混淆
+  - Node.js
+metrics:
+  - value: "签名还原"
+    label: x-s / x-t 本地复现
+  - value: "批量"
+    label: 关键词 / 作者 / 话题
+  - value: "结构化"
+    label: 正文 · 图片 · 互动 · 标签
+video:
+  src: /videos/xhs-demo.mp4
+  poster: /videos/xhs-demo-poster.jpg
+featured: false
+order: 12
+---
+
+## 做到了什么
+
+输入一个关键词或笔记链接，就能拉回完整的内容字段——标题、正文、图片、点赞收藏评论数、话题标签、作者信息，按需导出成表格供后续分析。
+
+## 难点在哪
+
+小红书的接口不是"加个 header 就能调"那种。每次请求都要带一个叫 `x-s` 的签名，它由一段**重度混淆的 JavaScript + WASM** 实时算出，跟请求参数、时间戳、设备指纹绑定。直接抄不行——得把这段逻辑从 App 里抠出来、读懂它在算什么、在本地重新跑通。
+
+换句话说，爬的不是"网页"，是一个**会自我保护的客户端协议**。一旦签名能离线复现，后面就是普通的接口调用和数据清洗了。

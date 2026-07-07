@@ -64,7 +64,10 @@ const counts = Object.fromEntries(
                 if (items.length === 0) return null;
                 return (
                   <div class="list-cat">
-                    <p class="list-cat__label">{cat.label}</p>
+                    {/* explore 域下全平铺，不显示子分类标题 */}
+                    {dm.key !== "explore" && (
+                      <p class="list-cat__label">{cat.label}</p>
+                    )}
                     {items.map((p) => (
                       <button
                         class:list={[

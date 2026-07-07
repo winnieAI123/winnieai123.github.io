@@ -15,10 +15,12 @@ export const site = {
 export const domains = [
   { key: "life", label: "生活" },
   { key: "work", label: "工作" },
+  { key: "explore", label: "LLM边界探索" },
 ] as const;
 
 export const categories = [
   { key: "agent", label: "对话 Agent" },
   { key: "system", label: "AI 产品 & 数据系统" },
   { key: "skill", label: "可复用 Skill" },
+  { key: "crawler", label: "爬虫 & 数据逆向" },
 ] as const;
